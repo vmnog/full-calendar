@@ -3,6 +3,7 @@
 import * as React from "react"
 import { CalendarSearch, PanelRightIcon } from "lucide-react"
 
+import { Button } from "@/components/ui/button"
 import { Kbd } from "@/components/ui/kbd"
 import {
   Sidebar,
@@ -26,8 +27,8 @@ export function SidebarLeft({
   const { toggleSidebar } = useSidebar()
 
   return (
-    <Sidebar side="right" className="border-l bg-context-panel" {...props}>
-      <SidebarHeader className="p-3">
+    <Sidebar side="right" className="border-l !bg-context-panel [&_[data-slot=sidebar-inner]]:!bg-context-panel" {...props}>
+      <SidebarHeader className="h-14 justify-center px-4">
         <div className="flex items-center gap-2">
           <CalendarSearch className="text-muted-foreground size-4 shrink-0" />
           <input
@@ -37,13 +38,14 @@ export function SidebarLeft({
           />
           <Tooltip>
             <TooltipTrigger asChild>
-              <button
-                type="button"
+              <Button
+                variant="ghost"
+                size="icon"
+                className="size-7 shrink-0"
                 onClick={toggleSidebar}
-                className="text-muted-foreground hover:text-foreground shrink-0 transition-colors"
               >
                 <PanelRightIcon className="size-4" />
-              </button>
+              </Button>
             </TooltipTrigger>
             <TooltipContent side="bottom">
               Close context panel <Kbd className="ml-1">/</Kbd>
