@@ -110,7 +110,7 @@ export function WeekView({
       </div>
 
       {/* ONLY this part scrolls */}
-      <div className="flex-1 overflow-auto">
+      <div className="flex-1 overflow-auto scrollbar-hide">
         <div className="relative flex" style={{ height: hours.length * HOUR_HEIGHT }}>
           <WeekViewTimeAxis hours={hours} hourHeight={HOUR_HEIGHT} />
           <div className="relative flex-1">

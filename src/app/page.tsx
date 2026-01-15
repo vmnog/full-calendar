@@ -69,7 +69,7 @@ function PageContent() {
       <SidebarRight open={leftSidebarOpen} />
       <SidebarInset className="flex flex-col overflow-hidden">
         <header className="bg-background sticky top-0 z-30 flex h-14 shrink-0 items-center gap-2">
-          <div className="flex flex-1 items-center gap-2 px-3">
+          <div className="flex flex-1 items-center gap-2 px-4">
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button
@@ -98,7 +98,7 @@ function PageContent() {
               </span>
             </h1>
           </div>
-          <div className="flex items-center gap-2 px-3">
+          <div className="flex items-center gap-2 px-4">
             <ThemeToggle />
             <Avatar className="size-8">
               <AvatarImage src="https://github.com/vmnog.png" alt="Victor Nogueira" />
