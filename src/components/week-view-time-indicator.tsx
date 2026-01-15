@@ -66,12 +66,18 @@ export function WeekViewTimeIndicator({
           <React.Fragment key={day.date.toISOString()}>
             {/* Vertical line at the start of today's column */}
             {index === todayIndex && (
-              <div className="bg-primary h-3 w-0.5 flex-shrink-0 translate-y-[0.5px]" />
+              <div className="relative flex-shrink-0">
+                <div className="bg-primary h-3 w-[3px] translate-y-[0.5px] rounded-full shadow-[0_0_0_1px_white] dark:shadow-[0_0_0_1px_black]" />
+                {/* Cover the shadow at intersection */}
+                <div className="absolute top-[6.5px] left-[2px] bg-primary h-[1px] w-[2px] z-10" />
+                <div className="absolute top-[5.5px] left-[2px] bg-primary h-[1px] w-[2px] z-10" />
+                <div className="absolute top-[4.5px] left-[2px] bg-primary h-[1px] w-[2px] z-10" />
+              </div>
             )}
             <div
               className={cn(
                 "flex-1 bg-primary",
-                day.isToday ? "h-[3px]" : "h-[0.5px]"
+                day.isToday ? "h-[3px] rounded-r-full shadow-[0_0_0_1px_white] dark:shadow-[0_0_0_1px_black]" : "h-[0.5px]"
               )}
             />
           </React.Fragment>
