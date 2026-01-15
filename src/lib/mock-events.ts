@@ -82,8 +82,24 @@ export function generateMockEvents(currentDate: Date): CalendarEvent[] {
       color: "gray",
       calendarId: "personal",
     },
+    {
+      id: "17",
+      title: "Test Event",
+      start: setMinutes(setHours(addDays(weekStart, 3), 16), 0),
+      end: setMinutes(setHours(addDays(weekStart, 3), 17), 0),
+      color: "blue",
+      calendarId: "work",
+    },
 
     // Thursday events
+    {
+      id: "18",
+      title: "Test Event",
+      start: setMinutes(setHours(addDays(weekStart, 4), 16), 0),
+      end: setMinutes(setHours(addDays(weekStart, 4), 17), 0),
+      color: "blue",
+      calendarId: "work",
+    },
     {
       id: "8",
       title: "Workshop",

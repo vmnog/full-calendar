@@ -26,7 +26,7 @@ export function SidebarLeft({
   const { toggleSidebar } = useSidebar()
 
   return (
-    <Sidebar side="right" className="border-l bg-white dark:bg-[#191919]" {...props}>
+    <Sidebar side="right" className="border-l bg-context-panel" {...props}>
       <SidebarHeader className="p-3">
         <div className="flex items-center gap-2">
           <CalendarSearch className="text-muted-foreground size-4 shrink-0" />

@@ -19,6 +19,7 @@
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-muted-foreground: var(--sidebar-muted-foreground);
   --color-sidebar: var(--sidebar);
+  --color-context-panel: var(--context-panel);
   --color-calendar-weekend: var(--calendar-weekend);
   --color-calendar-current-week: var(--calendar-current-week);
   --color-calendar-day-hover: var(--calendar-day-hover);
@@ -130,6 +131,7 @@
   --calendar-day-hover: #EEECE8;
   --calendar-day-hover-current-week: #E2E1DC;
   --sidebar: #f8f8f7;
+  --context-panel: #ffffff;
   --sidebar-foreground: #939391;
   --sidebar-muted-foreground: #cfcfce;
   --sidebar-primary: #32302c;
@@ -193,6 +195,7 @@ html.dark,
   --calendar-day-hover: #2E2E2E;
   --calendar-day-hover-current-week: #3D3D3D;
   --sidebar: #202020;
+  --context-panel: #191919;
   --sidebar-foreground: #868686;
   --sidebar-muted-foreground: #555555;
   --sidebar-primary: #d9d9d9;

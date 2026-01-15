@@ -145,7 +145,7 @@ export function CalendarEventItem({
         className={cn(
           "absolute inset-0 rounded-md",
           styles.bg,
-          eventIsPast && "opacity-50"
+          eventIsPast && "opacity-60"
         )}
       />
 
@@ -154,26 +154,30 @@ export function CalendarEventItem({
         className={cn(
           "absolute left-0 top-0 bottom-0 w-[4px] rounded-l-md dark:bg-white dark:mix-blend-overlay",
           styles.border,
-          eventIsPast && "opacity-50"
+          eventIsPast && "opacity-60"
         )}
       />
       <div
         className={cn(
           "relative flex flex-col h-full pl-1 overflow-hidden",
-          isCompact && "flex-row items-center gap-1",
-          eventIsPast && "opacity-50"
+          isCompact && "flex-row items-center gap-1"
         )}
       >
         <span
           className={cn(
             "font-medium text-[0.625rem] leading-tight break-words dark:text-white/80",
-            styles.text
+            styles.text,
+            eventIsPast && "opacity-60"
           )}
         >
           {event.title}
         </span>
         {!isCompact && (
-          <span className={cn("text-[0.625rem] whitespace-nowrap dark:text-white dark:mix-blend-overlay", styles.text)}>
+          <span className={cn(
+            "text-[0.625rem] whitespace-nowrap dark:text-white dark:mix-blend-overlay",
+            styles.text,
+            eventIsPast && "opacity-60 dark:opacity-100"
+          )}>
             {formatEventTimeRange(event)}
           </span>
         )}
@@ -264,7 +268,7 @@ export function AllDayEventItem({
           styles.bg,
           spanStart && "rounded-l-md",
           spanEnd && "rounded-r-md",
-          eventIsPast && "opacity-50"
+          eventIsPast && "opacity-60"
         )}
       />
 
@@ -274,16 +278,16 @@ export function AllDayEventItem({
           className={cn(
             "absolute left-0 top-0 bottom-0 w-[4px] rounded-l-md dark:bg-white dark:mix-blend-overlay",
             styles.border,
-            eventIsPast && "opacity-50"
+            eventIsPast && "opacity-60"
           )}
         />
       )}
       <span
         className={cn(
-          "relative font-medium text-[0.625rem] leading-tight whitespace-nowrap dark:text-white",
+          "relative font-medium text-[0.625rem] leading-tight whitespace-nowrap dark:text-white/80",
           spanStart && "pl-1",
           styles.text,
-          eventIsPast && "opacity-50"
+          eventIsPast && "opacity-60"
         )}
       >
         {event.title}
@@ -293,7 +297,7 @@ export function AllDayEventItem({
           className={cn(
             "relative text-[0.625rem] leading-tight whitespace-nowrap shrink-0 dark:text-white dark:mix-blend-overlay",
             styles.text,
-            eventIsPast && "opacity-50"
+            eventIsPast && "opacity-60"
           )}
         >
           {formatAllDayStartTime(event.start)}
