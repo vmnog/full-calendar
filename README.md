@@ -1,8 +1,10 @@
-# Calendar CN
+# CalendarCN
 
 A beautifully crafted, open source calendar component for React. Built with [shadcn/ui](https://ui.shadcn.com), inspired by [Notion Calendar](https://www.notion.so/product/calendar).
 
-![Calendar CN Preview](./public/og-image.png)
+![CalendarCN Preview](./public/og-image.png)
+
+**[Live Demo](https://calendarcn.vercel.app)**
 
 ## Features
 
@@ -101,16 +103,8 @@ Contributions are welcome! Feel free to:
 
 ## License
 
-MIT License - feel free to use this in your own projects!
+[MIT License](./LICENSE) - feel free to use this in your own projects!
 
-## Credits
+## Author
 
-- Design inspired by [Notion Calendar](https://www.notion.so/product/calendar)
-- Built with [shadcn/ui](https://ui.shadcn.com/) components
-- Created by [Victor Nogueira](https://github.com/vmnog)
-
-## Links
-
-- [Live Demo](https://calendarcn.vercel.app)
-- [GitHub Repository](https://github.com/vmnog/calendarcn)
-- [Twitter](https://twitter.com/vmaborern)
+Created by [Victor Nogueira](https://github.com/vmnog) - [Twitter/X](https://x.com/mevmnog)
