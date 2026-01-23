@@ -7,58 +7,70 @@ import { useTheme } from "next-themes"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
-interface ThemeToggleProps {
+interface ThemeToggleProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
 }
 
-export function ThemeToggle({ className }: ThemeToggleProps) {
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = React.useState(false)
+export const ThemeToggle = React.forwardRef<HTMLButtonElement, ThemeToggleProps>(
+  ({ className, ...props }, ref) => {
+    const { theme, setTheme } = useTheme()
+    const [mounted, setMounted] = React.useState(false)
 
-  React.useEffect(() => {
-    setMounted(true)
-  }, [])
+    React.useEffect(() => {
+      setMounted(true)
+    }, [])
 
-  const cycleTheme = () => {
-    if (theme === "system") {
-      setTheme("light")
-      return
+    const cycleTheme = () => {
+      if (theme === "system") {
+        setTheme("light")
+        return
+      }
+      if (theme === "light") {
+        setTheme("dark")
+        return
+      }
+      setTheme("system")
     }
-    if (theme === "light") {
-      setTheme("dark")
-      return
-    }
-    setTheme("system")
-  }
 
-  const getIcon = () => {
-    if (theme === "light") {
-      return <SunIcon className="size-4" />
+    const getIcon = () => {
+      if (theme === "light") {
+        return <SunIcon className="size-4" />
+      }
+      if (theme === "dark") {
+        return <MoonIcon className="size-4" />
+      }
+      return <MonitorIcon className="size-4" />
     }
-    if (theme === "dark") {
-      return <MoonIcon className="size-4" />
-    }
-    return <MonitorIcon className="size-4" />
-  }
 
-  if (!mounted) {
+    if (!mounted) {
+      return (
+        <Button
+          ref={ref}
+          variant="ghost"
+          size="icon"
+          className={cn("size-7 text-sidebar-muted-foreground", className)}
+          {...props}
+        >
+          <MonitorIcon className="size-4" />
+          <span className="sr-only">Toggle theme</span>
+        </Button>
+      )
+    }
+
     return (
-      <Button variant="ghost" size="icon" className={cn("size-7 text-sidebar-muted-foreground", className)}>
-        <MonitorIcon className="size-4" />
+      <Button
+        ref={ref}
+        variant="ghost"
+        size="icon"
+        className={cn("size-7 text-sidebar-muted-foreground", className)}
+        onClick={cycleTheme}
+        {...props}
+      >
+        {getIcon()}
         <span className="sr-only">Toggle theme</span>
       </Button>
     )
   }
+)
 
-  return (
-    <Button
-      variant="ghost"
-      size="icon"
-      className={cn("size-7 text-sidebar-muted-foreground", className)}
-      onClick={cycleTheme}
-    >
-      {getIcon()}
-      <span className="sr-only">Toggle theme</span>
-    </Button>
-  )
-}
+ThemeToggle.displayName = "ThemeToggle"

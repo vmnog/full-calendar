@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Eye, HelpCircle, Link2, Plus, UserRound } from "lucide-react"
+import { Eye, Github, Link2, Plus, UserRound } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Calendars } from "@/components/calendars"
@@ -18,6 +18,11 @@ import {
   SidebarMenuItem,
   SidebarSeparator,
 } from "@/components/ui/sidebar"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 const SIDEBAR_WIDTH = "15rem"
 
@@ -119,10 +124,22 @@ export function SidebarRight({ open = true }: SidebarRightProps) {
         </SidebarContent>
         <SidebarFooter className="border-t border-sidebar-border">
           <div className="flex items-center justify-start gap-1 px-2 py-2">
-            <Button variant="ghost" size="icon" className="size-7 text-sidebar-foreground">
-              <HelpCircle className="size-4" />
-            </Button>
-            <ThemeToggle className="text-sidebar-foreground" />
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="ghost" size="icon" className="size-7 text-sidebar-foreground" asChild>
+                  <a href="https://github.com/vmnog/calendarcn" target="_blank" rel="noopener noreferrer">
+                    <Github className="size-4" />
+                  </a>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent side="top">Go to repo</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <ThemeToggle className="text-sidebar-foreground" />
+              </TooltipTrigger>
+              <TooltipContent side="top">Toggle theme</TooltipContent>
+            </Tooltip>
           </div>
         </SidebarFooter>
       </div>

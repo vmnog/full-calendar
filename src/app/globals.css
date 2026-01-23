@@ -213,6 +213,9 @@ html.dark,
   body {
     @apply bg-background text-foreground;
   }
+  a {
+    cursor: default;
+  }
 }
 
 @layer utilities {
