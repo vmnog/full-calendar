@@ -105,6 +105,13 @@ Contributions are welcome! Feel free to:
 
 [MIT License](./LICENSE) - feel free to use this in your own projects!
 
-## Author
+## Credits
 
-Created by [Victor Nogueira](https://github.com/vmnog) - [Twitter/X](https://x.com/mevmnog)
+- Design inspired by [Notion Calendar](https://www.notion.so/product/calendar)
+- Built with [shadcn/ui](https://ui.shadcn.com/) components
+- Created by [Victor Nogueira](https://github.com/vmnog)
+
+## Links
+
+- [Live Demo](https://calendarcn.vercel.app)
+- [Twitter/X](https://x.com/mevmnog)
