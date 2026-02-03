@@ -48,8 +48,8 @@ export const ThemeToggle = React.forwardRef<HTMLButtonElement, ThemeToggleProps>
           ref={ref}
           variant="ghost"
           size="icon"
-          className={cn("size-7 text-sidebar-muted-foreground", className)}
           {...props}
+          className={cn("size-7 text-sidebar-muted-foreground", className)}
         >
           <MonitorIcon className="size-4" />
           <span className="sr-only">Toggle theme</span>
@@ -62,9 +62,9 @@ export const ThemeToggle = React.forwardRef<HTMLButtonElement, ThemeToggleProps>
         ref={ref}
         variant="ghost"
         size="icon"
+        {...props}
         className={cn("size-7 text-sidebar-muted-foreground", className)}
         onClick={cycleTheme}
-        {...props}
       >
         {getIcon()}
         <span className="sr-only">Toggle theme</span>
